@@ -24,7 +24,11 @@ Pycharm多行注释解注释：按快捷键Ctrl + /
 
 """
 
+"""
+    aitken迭代算法的实现
+"""
 import time
+
 
 def dest_func(x):
     return pow(x,2)-6*x+3==0
