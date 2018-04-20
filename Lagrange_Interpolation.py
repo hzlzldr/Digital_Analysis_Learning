@@ -19,15 +19,39 @@ __mtime__ = '2018/4/18'
                ┗┻┛ ┗┻┛
 
 Pycharm多行注释解注释：按快捷键Ctrl + /
-Pycharm多行注释解注释：按快捷键Ctrl + /
-Pycharm多行注释解注释：按快捷键Ctrl + /
-
 """
 """
     to implement the Lagrange-interpolation
+    Ln(x)=Σli(x)*f(xi)  i∈（0，n)
+    li(x)=П(x-xj)/(xi-xj) j∈（0，n)&& j!=i
 """
 
-import time
+"""
+    不足：没有想到怎么输出多项式的表达式，只能直接输出结果
+"""
 
+def Lagrange(x_list,y_list,var):
+    Lx=0
+    n=len(x_list)
+    x=var
+    for i in range(n):
+        temp=y_list[i]
+        for j in range(n):
+            if j!=i:
+                temp=temp*(x-int(x_list[j]))/(int(x_list[i])-int(x_list[j]))
+            else:
+                continue
+        Lx+=temp
 
+    return Lx
+def main(x,y,var):
+    Lx=Lagrange(x,y,var)
+    print(Lx)#out:0.2559999999999998
+
+if __name__ == '__main__':
+
+    x_list=[-2,0,1,2]
+    y_list=[17,1,2,17]#y=f(x)
+    var=0.6
+    main(x_list,y_list,var)
 
