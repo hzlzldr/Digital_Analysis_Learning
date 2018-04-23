@@ -69,7 +69,7 @@ def Newton_interpolation(x_list,y_list,var_value,n,init=0):
     :param x_list:x的取值
     :param var_value:待求的x的取值
     :param n:插值多项式的阶数
-（卧槽，岂不是还可以加一个间隔）
+    :param init:从整个数据值选部分数值的第一个起始位置（卧槽，岂不是还可以加一个间隔）
     :return: 待求点再对应n阶多项式下的值
     """
     xlst=x_list
