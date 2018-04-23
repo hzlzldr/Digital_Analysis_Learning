@@ -35,6 +35,8 @@ Now,God only knows.
     
 """
 
+
+
 def Difference_quotient(x_list,y_list,n,init=0):
     """
     to computer the Difference quotient
@@ -44,8 +46,7 @@ def Difference_quotient(x_list,y_list,n,init=0):
     :param init:从整个数据值选部分数值的第一个起始位置
     :return: 对应的差商值
     """
-    x=x_list
-    y=y_list
+
     if n>len(x_list):
         print("please enter the 3th parameter less than  %d",n)
         return None
@@ -72,11 +73,9 @@ def Newton_interpolation(x_list,y_list,var_value,n,init=0):
 （卧槽，岂不是还可以加一个间隔）
     :return: 待求点再对应n阶多项式下的值
     """
-    xlst=x_list
-    ylst=y_list
-    x=var_value
-    if n>len(xlst)-1:
-        n=len(xlst)
+
+    if n>len(x_list)-1:
+        n=len(x_list)
         print("please enter the 4th parameter less than len %d",n-1)
 
 
@@ -85,7 +84,7 @@ def Newton_interpolation(x_list,y_list,var_value,n,init=0):
         Diff=Difference_quotient(x_list,y_list,i,init)
         temp=1
         for j in range(i):#这里会默认取值是从第一值开始的，若运用从第二个数值开始的4个值计算出来的插值与这个不同
-            temp*=(x-float(xlst[j+init]))
+            temp*=(var_value-float(x_list[j+init]))
         Nx+=temp*Diff
 
     return Nx
@@ -94,11 +93,10 @@ def Newton_interpolation(x_list,y_list,var_value,n,init=0):
 def main():
     x_list=[1,2,3,5,6]
     y_list=[0,2,6,20,90]
+
     result=Newton_interpolation(x_list,y_list,3.5,3,1)#out:3.125
     result = Newton_interpolation(x_list, y_list, 3.5, 3, 0)  # out:8.75
     result = Newton_interpolation(x_list, y_list, 3.5, 4)  # out:5.9375
-    print(result)
-
 
 
 if __name__ == '__main__':
