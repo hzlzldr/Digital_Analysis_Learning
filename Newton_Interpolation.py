@@ -27,7 +27,7 @@ Now,God only knows.
     Nn(x)=f(X0)+f[X0,X1](X-X0)+f[X0,X1,X2](X-X0)(X-X1)+...+f[X0,X1,X2,...,Xn](X-X0)(X-X1)..(X-Xn-1)
     Nn+1(x)=Nn(x)+f[X0,X1,X2,...Xn-1,Xn](X-X0)(X-X1)(X-X2)...(X-Xn-1)(X-Xn)
     
-    牛顿插值法相较于拉格朗日插值的有点在于，更高的阶可以有低阶推演出来，从而不会浪费之前的运算
+    牛顿插值法相较于拉格朗日插值的有点在于，更高的阶可以由低阶推演出来，从而不会浪费之前的运算
     
     f[X0,X1,X2,...，Xn)=Σ(f(Xi)П(1/Xi-Xj) i∈(0,k),j∈(0,k)&&j!=i
     
@@ -70,7 +70,7 @@ def Newton_interpolation(x_list,y_list,var_value,n,init=0):
     :param x_list:x的取值
     :param var_value:待求的x的取值
     :param n:插值多项式的阶数
-（卧槽，岂不是还可以加一个间隔）
+    :param init:从整个数据值选部分数值的第一个起始位置（卧槽，岂不是还可以加一个间隔）
     :return: 待求点再对应n阶多项式下的值
     """
 
