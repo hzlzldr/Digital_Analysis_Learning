@@ -31,6 +31,12 @@ Pycharm多行注释解注释：按快捷键Ctrl + /
 """
 
 def Lagrange(x_list,y_list,var):
+    """
+    :param x_list: x取值
+    :param y_list: 对应y的取值
+    :param var:待求的x值
+    :return: 对应的y值
+    """
     Lx=0
     n=len(x_list)
     x=var
@@ -38,7 +44,7 @@ def Lagrange(x_list,y_list,var):
         temp=y_list[i]
         for j in range(n):
             if j!=i:
-                temp=temp*(x-int(x_list[j]))/(int(x_list[i])-int(x_list[j]))
+                temp=temp*(x-float(x_list[j]))/(float(x_list[i])-float(x_list[j]))
             else:
                 continue
         Lx+=temp
