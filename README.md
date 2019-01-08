@@ -1,3 +1,3 @@
-# Digital_Analysis_Learning
+# Numerical analysis_Learning
 
-数字分析教程中的一些算法的代码实现
+数值分析教程中的一些算法的代码实现
